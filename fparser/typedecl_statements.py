@@ -274,8 +274,8 @@ class TypeDeclarationStatement(Statement):
         s = self.tostr()
         if self.attrspec:
             s += ', ' + ', '.join(self.attrspec)
-            if self.entity_decls:
-                s += ' ::'
+        if self.attrspec or '=' in str(self.entity_decls):
+            s += ' ::'
         if self.entity_decls:
             s += ' ' + ', '.join(self.entity_decls)
         return tab + s
