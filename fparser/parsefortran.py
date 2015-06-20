@@ -71,7 +71,7 @@ class FortranParser(object):
                 logger.critical(message)
                 # reader.show_message(message, sys.stderr)
                 reader = reader.reader
-            logger.debug(''.join(('Traceback\n',''.join( traceback.format_stack() ))))
+            logger.critical(''.join(('Traceback\n',''.join(traceback.format_exc()))))
             # traceback.print_exc(file=sys.stderr)
             logger.critical(red_text('STOPPED PARSING'))
             # self.reader.show_message(red_text('STOPPED PARSING'), sys.stderr)
